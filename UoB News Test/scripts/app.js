@@ -49,6 +49,7 @@ function goingAway() {
 
 //EVENTS
 function eventListViewPullWithEndless(e) {
+
     app.application.showLoading();
     var dataSource = new kendo.data.DataSource({
         transport: {
@@ -58,7 +59,7 @@ function eventListViewPullWithEndless(e) {
             }
         },
         serverPaging: true,
-        pageSize: 28,
+        pageSize: 50,
         change: function (data) {
             app.application.hideLoading();
         }
@@ -67,12 +68,47 @@ function eventListViewPullWithEndless(e) {
     $("#pull-eventslistview").kendoMobileListView({
         dataSource: dataSource,
         template: $("#events-template").text(),
-        pullToRefresh: true,
-        endlessScroll: true
+        pullToRefresh: true
     });
     
+   
     ScreenButtonClicked("events");
     log("stored:" + localStorage.getItem('allowUsageTracking'));
+}
+
+
+//Event Item
+function eventItemView(e) {
+    app.application.showLoading();
+    var contentId = parseInt(e.view.params.contentId);
+    log(contentId);
+    
+    var eventSource = new kendo.data.DataSource({
+        transport: {
+            read: {
+                url: "http://www.birmingham.ac.uk/web_services/Events.svc/" + contentId,   
+                dataType: "json"
+            }
+        },
+        schema: {
+            data: function (data)
+            {
+                return [data];
+            }
+        },
+        
+        change: function (data) {
+            app.application.hideLoading();
+        }
+    });
+        
+    $("#event-detail").kendoMobileListView({
+        dataSource: eventSource,
+        template: $("#event-template").text()
+    });
+    
+    ScreenButtonClicked("event item:");
+    log("stored:" + localStorage.getItem('allowUsageTracking') + ": EVENTITEM");
 }
 
 //NEWS
@@ -93,7 +129,7 @@ function newsListViewPullWithEndless(e) {
             }
         },
         serverPaging: true,
-        pageSize: 6,
+        pageSize: 40,
         change: function (data) {
             app.application.hideLoading();
         }

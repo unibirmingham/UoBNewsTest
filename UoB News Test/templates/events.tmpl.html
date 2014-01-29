@@ -1,9 +1,17 @@
 <!--Events template-->
     <script type="text/x-kendo-tmpl" id="events-template">
-        <div class="event-item">
-            <div>#:Title#<br/>
-            <span class="eventDate">#:DateDescription#</span></div>
-            <!--<p>#:EventUrl#</p>-->
-        </div>
+        <li class="event-item">
+            <a href='\#singleEventView?contentId=#:ContentId#' data-contentId='#:ContentId#' data-role='listview-link'>
+                <div>#:Title#<br/><span class='eventDate'>#:DateDescription#</span></div>
+            </a>
+        </li>
     </script>
     
+<!-- event template -->
+<script type="text/x-kendo-template" id="event-template">
+    <li>
+                <p>#: Title #</p>
+                <p>#: Description #</p>
+                <p>#: Category #</p>
+    </li>
+</script>

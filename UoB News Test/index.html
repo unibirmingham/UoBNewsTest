@@ -64,11 +64,23 @@
         <ul id="pull-eventslistview" class="events-list"></ul>
     </div>
     
+    <!--Events item screen-->
+    <div id="singleEventView" data-role="view" data-title="Event" data-show="eventItemView">
+                <ul id="event-detail" class="events-list">
+                </ul>
+
+        <!--
+        <div class="event-title" id="eventViewTitle">Event title <span id="event-id">[*]</span></div>
+        <div class="event-description" id="eventViewDescription">Event description</div>
+        -->
+            
+    </div>
+    
     <!--News screen-->
     <div id="tabstrip-news" data-role="view" data-init="newsListViewPullWithEndless" data-title="News">
         <div class="news-title">Drama schedule (BBC)</div>
-            <ul id="pull-newslistview" class="news-list"></ul>
-         </div>
+        <ul id="pull-newslistview" class="news-list"></ul>
+    </div>
     
     <!--Info screen-->
     <div id="tabstrip-info" data-role="view" data-init="infoInit" data-title="AppInfo">
