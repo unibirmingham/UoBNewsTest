@@ -59,7 +59,7 @@ function eventListViewPullWithEndless(e) {
             }
         },
         serverPaging: true,
-        pageSize: 50,
+        pageSize: 10,
         change: function (data) {
             app.application.hideLoading();
         }
@@ -137,7 +137,7 @@ function newsListViewPullWithEndless(e) {
         
     $("#pull-newslistview").kendoMobileListView({
         dataSource: dataSource,
-        template: $("#news-template").text(),
+        template: $("#news-template").html(),
         pullToRefresh: true
     });
    

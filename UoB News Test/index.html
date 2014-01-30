@@ -152,21 +152,19 @@
     <script src="scripts/weather.js"></script>    
     <script src="scripts/templateLoader.js"></script>
         
-    <script>
-        app.application = new kendo.mobile.Application(document.body, { 
-            layout: "tabstrip-layout"
-        });
-        
-
-        
-
-    </script>
-    
+ 
     <script>
         //load templates
         templateLoader.loadExtTemplate("templates/weather.tmpl.html");
         templateLoader.loadExtTemplate("templates/events.tmpl.html");
         templateLoader.loadExtTemplate("templates/news.tmpl.html");
+    </script>
+    
+    <script>
+        app.application = new kendo.mobile.Application(document.body, { 
+            layout: "tabstrip-layout"
+        });
+
     </script>
     
 </body>

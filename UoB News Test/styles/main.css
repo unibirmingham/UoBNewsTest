@@ -411,8 +411,8 @@ ul#pull-newslistview li {
     
 }
 
-li.news-item a,
-li.event-item a {
+div.news-item a,
+div.event-item a {
     font-weight:normal;
     text-decoration: none;
 }
