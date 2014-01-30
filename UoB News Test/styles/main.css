@@ -394,7 +394,7 @@ body, html {
 
 div.events-title,
 div.news-title {
-    margin: 0.4em 0.8em 0.2em 0.8em;
+    margin: 0.6em 0.8em 0.2em 0.9em;
     font-size: 1.3em;
 }
 
@@ -415,4 +415,40 @@ div.news-item a,
 div.event-item a {
     font-weight:normal;
     text-decoration: none;
+}
+
+
+
+div.event-field {
+    padding: 0.4em 0.6em;
+    font-size: 1em;
+}
+
+div.event-title {
+    padding: 1.2em 0.2em 0.4em 0.2em;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+div#event-detail p {
+    
+    margin-left:0px;
+    margin-right:0px;
+}
+
+div.event-field-label {
+    border-bottom: 1px solid;
+    padding-bottom:2px;
+}
+
+div.event-field-data {
+    padding-top:2px;
+}
+
+div.event-category div.event-field-label {
+    display:none;
+}
+
+div.event-category div.event-field-data {
+    color: #F0F8FF;
 }

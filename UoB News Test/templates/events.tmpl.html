@@ -9,9 +9,32 @@
     
 <!-- event template -->
 <script type="text/x-kendo-template" id="event-template">
-    <li>
-                <p>#: Title #</p>
-                <p>#: Description #</p>
-                <p>#: Category #</p>
-    </li>
+    <div class="eventViewItem">
+        <div class="event-field event-title">#: Title #</div>
+     
+        <div class="event-field event-date">
+            <div class="event-field-label">Date</div>
+            <div class="event-field-data">#: DateDescription #</div>
+        </div>
+        <div class="event-field event-location">
+            <div class="event-field-label">Location</div>
+            <div class="event-field-data">#: Location #</div>
+        </div>
+        <div class="event-field event-contact">
+            <div class="event-field-label">Contact</div>
+            <div class="event-field-data">#: htmlDecode(Contact) #</div>
+        </div>
+        <div class="event-field event-article">
+            <div class="event-field-label">Details</div>
+            <div class="event-field-data">#: htmlDecode(Article) #</div>
+        </div>
+        <div class="event-field event-category">
+            <div class="event-field-label">Categories</div>
+            <div class="event-field-data">#: Category #</div>           
+        </div>
+        <div class="event-field event-information">
+            <div class="event-field-label">More Information</div>
+            <div class="event-field-data"><a href="#: EventFullUrl #">#: EventUrl #</a></div>           
+        </div>
+    </div>
 </script>

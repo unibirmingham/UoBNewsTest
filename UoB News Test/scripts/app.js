@@ -79,6 +79,7 @@ function eventListViewPullWithEndless(e) {
 
 //Event Item
 function eventItemView(e) {
+    $("#event-detail").html('');
     app.application.showLoading();
     var contentId = parseInt(e.view.params.contentId);
     log(contentId);
@@ -90,22 +91,28 @@ function eventItemView(e) {
                 dataType: "json"
             }
         },
+        
         schema: {
             data: function (data)
             {
                 return [data];
             }
         },
-        
         change: function (data) {
+            var template = kendo.template($("#event-template").text());
+            var event = kendo.render(template, this.view());
+            log(event);
+            $("#event-detail").html(event);
             app.application.hideLoading();
         }
     });
         
-    $("#event-detail").kendoMobileListView({
-        dataSource: eventSource,
-        template: $("#event-template").text()
-    });
+    //$("#event-detail").kendoMobileListView({
+    //    dataSource: eventSource,
+    //    template: $("#event-template").html()    
+    //});
+    
+    eventSource.read();
     
     ScreenButtonClicked("event item:");
     log("stored:" + localStorage.getItem('allowUsageTracking') + ": EVENTITEM");
@@ -206,6 +213,19 @@ function onTrackingChange(e) {
 //LOGGING    
 function log(msg) {
     $('#log').val($('#log').val() + msg + '\n');
+}
+
+function cleanOutHtmlTags(content) {
+
+    var myString =  content.replace("&lt;p&gt;","<p>").replace("&lt;/p&gt;","</p>");
+    myString =  content.replace("&amp;","&");
+    
+    log("here")
+    return myString;
+}
+
+function htmlDecode(value){
+  return $('<div/>').html(value).text();
 }
 
 
