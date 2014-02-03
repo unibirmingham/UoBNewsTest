@@ -1,9 +1,16 @@
 <!--Events template-->
     <script type="text/x-kendo-tmpl" id="events-template">
         <div class="event-item">
-            <a href='\#singleEventView?contentId=#:ContentId#' data-contentId='#:ContentId#' data-role='listview-link'>
-                <div>#:Title#<br/><span class='eventDate'>#:DateDescription#</span></div>
-            </a>
+                
+                <span class="event-image" style="background-image: url('http://www.birmingham.ac.uk#:EventImageUrl#')"></span>
+                <div class="event-text">
+                    <span class="event-title">#:Title#</span>
+                    <span class="event-date">#:DateDescription#</span>
+                </div>
+                
+                <a class="event-link" href="\#singleEventView?contentId=#:ContentId#" data-role="detailbutton" data-style="detaildisclose" data-contentId="#:ContentId#"></a>
+        
+            
         </div>
     </script>
     
@@ -11,7 +18,7 @@
 <script type="text/x-kendo-template" id="event-template">
     <div class="eventViewItem">
         <div class="event-field event-title">#: Title #</div>
-     
+        
         <div class="event-field event-date">
             <div class="event-field-label">Date</div>
             <div class="event-field-data">#: DateDescription #</div>
@@ -34,7 +41,9 @@
         </div>
         <div class="event-field event-information">
             <div class="event-field-label">More Information</div>
-            <div class="event-field-data"><a href="#: EventFullUrl #">#: EventUrl #</a></div>           
+            <div class="event-field-data"><a href="\#singleEventView?contentId=#:ContentId#" onClick="window.open('#: EventFullUrl #', '_system')">#: EventUrl #</a></div> 
+            
         </div>
+        <div class="event-img"><img src="#: EventImageFullUrl #" alt="event image: #: Title#" /></div>
     </div>
 </script>

@@ -24,6 +24,86 @@
         <div class="view-content">
             <!--<h1>Welcome!</h1>
             <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>-->
+            <!-- scroller -->
+            <div id="scrollview-container">
+                <div data-role="scrollview" data-page="1">
+                    <div data-role="page" class="newsLine">Foo</div>
+                    <div data-role="page" class="newsLine">Bar</div>
+                    <div data-role="page" class="newsLine">Tan</div>
+                    <div data-role="page" class="newsLine">Mol</div>
+                </div>
+            </div>
+            
+            <style>
+    #scrollview-container .newsLine {
+        margin: 4px;
+        height: 50px;
+        display: inline-block;
+        -webkit-background-size: auto 100%;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .km-wp #scrollview-container .newsLine {
+        height: 4em;
+    }
+
+    #scrollview-container {
+        margin: 12px 0 1em 0;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        background: #eef; /* rgba(0,0,0,.1);*/
+        border: 1px solid rgba(0,0,0,.3);
+        border-width: 1px 0;
+        box-shadow: 0 1px 1px rgba(255,255,255,.3);
+    }
+    
+    .km-flat #scrollview-container {
+        background: transparent;
+        border-width: 0;
+        box-shadow: none;
+    }
+
+    .km-ios #scrollview-container {
+        box-shadow: 0 0 2px rgba(255,255,255,.5), inset 0 0 7px #000;
+    }
+
+    .km-ios .km-content {
+        background: #bbb;
+    }
+    .km-android .km-list .album-set a {
+    	background-color: #277692;
+    }
+    .km-ios .km-list .album-set a {
+    	background-color: #bbb;
+    }
+    .km-ios .km-navbar {
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255,255,255,.5)), color-stop(.06, rgba(255,255,255,.45)), color-stop(.5, rgba(255,255,255,.2)), color-stop(.5, rgba(255,255,255,.15)), color-stop(1, rgba(100,100,100,0))), url(../../content/shared/images/patterns/pattern5.png);
+        background: -moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.45) 6%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.15) 50%, rgba(100,100,100,0)), url(../../content/shared/images/patterns/pattern5.png);
+	}
+    .km-ios .km-navbar .km-button
+    {
+        background-color: #000;
+    }
+	.km-ios .km-content {
+        background: url(../../content/shared/images/patterns/pattern6.png);
+        box-shadow: inset 0 0 30px #000;
+	}
+
+	.km-ios #scrollview-container .km-pages .km-current-page {
+		background-color: #ff009c;
+	}
+	.km-ios #scrollview-container .km-pages {
+		padding-top: 18px;
+	}
+    .km-ios .km-view-title
+    {
+        color: #fff;
+        text-shadow: 0 -1px rgba(0,0,0,.5);
+    }
+</style>
+            
             <ul data-role="listview" datatype="group">
                 <li><a data-icon="justify" href="#tabstrip-news" data-transition="slide">News</a></li>
                 <li><a data-icon="cal" href="#tabstrip-events" data-transition="slide">Events</a></li>
@@ -31,7 +111,7 @@
                 <li><a data-icon="organize" href="#tabstrip-pocket-guide" data-transition="slide">Pocket Guide</a></li>
                 <li><a data-icon="globe" href="#tabstrip-map" data-transition="slide">Map</a></li>
             </ul>
-            <div class="img"></div>
+            <!--<div class="img"></div>-->
         </div>
     </div>
 
